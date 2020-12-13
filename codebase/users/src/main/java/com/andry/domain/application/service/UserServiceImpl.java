@@ -6,6 +6,7 @@ import com.andry.domain.port.in.UserServicePort;
 import com.andry.domain.port.out.UserRepositoryPort;
 
 import javax.enterprise.context.ApplicationScoped;
+import java.util.Date;
 import java.util.List;
 
 @ApplicationScoped
@@ -38,11 +39,13 @@ public class UserServiceImpl implements UserServicePort {
 
     @Override
     public void add(User user) {
+        user.setLastUpdate(new Date());
         this.repositoryPort.persist(user);
     }
 
     @Override
     public void edit(User user) {
+        user.setLastUpdate(new Date());
         this.repositoryPort.update(user);
     }
 

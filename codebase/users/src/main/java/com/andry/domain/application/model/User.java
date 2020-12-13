@@ -11,14 +11,7 @@ public class User {
     private Date birthDate;
     private Date lastUpdate;
 
-    public User(String id, String email, String firstName, String lastName, Date birthDate, Date lastUpdate) {
-        this.id = id;
-        this.email = email;
-        this.firstName = firstName;
-        this.lastName = lastName;
-        this.birthDate = birthDate;
-        this.lastUpdate = lastUpdate;
-    }
+
 
     @Override
     public boolean equals(Object o) {
@@ -47,6 +40,26 @@ public class User {
 
     public void setLastUpdate(Date lastUpdate) {
         this.lastUpdate = lastUpdate;
+    }
+
+    public void setId(String id) {
+        this.id = id;
+    }
+
+    public void setEmail(String email) {
+        this.email = email;
+    }
+
+    public void setFirstName(String firstName) {
+        this.firstName = firstName;
+    }
+
+    public void setLastName(String lastName) {
+        this.lastName = lastName;
+    }
+
+    public void setBirthDate(Date birthDate) {
+        this.birthDate = birthDate;
     }
 
     public String getId() {
