@@ -1,4 +1,4 @@
-package com.andry.domain.application.model;
+package com.andry.common.model;
 
 import java.util.Date;
 import java.util.Objects;
@@ -11,7 +11,17 @@ public class User {
     private Date birthDate;
     private Date lastUpdate;
 
+    public User() {
+    }
 
+    public User(String id, String email, String firstName, String lastName, Date birthDate, Date lastUpdate) {
+        this.id = id;
+        this.email = email;
+        this.firstName = firstName;
+        this.lastName = lastName;
+        this.birthDate = birthDate;
+        this.lastUpdate = lastUpdate;
+    }
 
     @Override
     public boolean equals(Object o) {

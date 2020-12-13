@@ -1,6 +1,6 @@
 package com.andry.infra.adapter.in;
 
-import com.andry.domain.application.model.User;
+import com.andry.common.model.User;
 import com.andry.domain.port.out.UserRepositoryPort;
 import com.andry.infra.application.mapper.UserEntityMapper;
 import com.andry.infra.application.mapper.UserMapper;

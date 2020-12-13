@@ -1,7 +1,7 @@
 package com.andry.domain.application.service;
 
 import com.andry.domain.application.exception.UserNotFoundException;
-import com.andry.domain.application.model.User;
+import com.andry.common.model.User;
 import com.andry.domain.port.in.UserServicePort;
 import com.andry.domain.port.out.UserRepositoryPort;
 
@@ -38,9 +38,10 @@ public class UserServiceImpl implements UserServicePort {
     }
 
     @Override
-    public void add(User user) {
+    public User add(User user) {
         user.setLastUpdate(new Date());
         this.repositoryPort.persist(user);
+        return this.repositoryPort.findBYEmail(user.getEmail()).orElse(null);
     }
 
     @Override

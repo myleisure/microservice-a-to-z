@@ -1,6 +1,7 @@
 package com.andry.infra.application.mapper;
 
-import com.andry.domain.application.model.User;
+import com.andry.common.model.User;
+import com.andry.common.model.UserBuilder;
 import com.andry.infra.application.entity.UserEntity;
 
 import java.util.ArrayList;
@@ -15,7 +16,7 @@ public class UserMapper {
 
     public static User map(UserEntity entity) {
         if (Objects.isNull(entity)) return null;
-        final var user = new User();
+        final var user = new UserBuilder().createUser();
         if (Objects.nonNull(entity.getId())) {
             user.setId(entity.getId().toString());
         }

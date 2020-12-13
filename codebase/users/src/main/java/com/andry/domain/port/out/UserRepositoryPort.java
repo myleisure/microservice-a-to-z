@@ -1,6 +1,6 @@
 package com.andry.domain.port.out;
 
-import com.andry.domain.application.model.User;
+import com.andry.common.model.User;
 
 import java.util.List;
 import java.util.Optional;

@@ -1,6 +1,6 @@
 package com.andry.infra.application.mapper;
 
-import com.andry.domain.application.model.User;
+import com.andry.common.model.User;
 import com.andry.infra.application.entity.UserEntity;
 import org.bson.types.ObjectId;
 
