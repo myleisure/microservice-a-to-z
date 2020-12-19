@@ -1,4 +1,4 @@
-package com.andry.resteasyjackson;
+package com.andry;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.databind.ObjectMapper;
