@@ -4,6 +4,7 @@ import io.quarkus.mongodb.panache.MongoEntity;
 import org.bson.types.ObjectId;
 
 import java.util.Date;
+import java.util.StringJoiner;
 
 @MongoEntity(collection = "user")
 public class UserEntity {
@@ -17,16 +18,15 @@ public class UserEntity {
     public UserEntity() {
     }
 
-    public UserEntity(ObjectId id,
-                      String email,
-                      String firstName,
-                      String lastName,
-                      Date lastUpdate) {
-        this.id = id;
-        this.email = email;
-        this.firstName = firstName;
-        this.lastName = lastName;
-        this.lastUpdate = lastUpdate;
+    @Override
+    public String toString() {
+        return new StringJoiner(", ", UserEntity.class.getSimpleName() + "[", "]")
+                .add("id=" + id)
+                .add("email='" + email + "'")
+                .add("firstName='" + firstName + "'")
+                .add("lastName='" + lastName + "'")
+                .add("lastUpdate=" + lastUpdate)
+                .toString();
     }
 
     public ObjectId getId() {
@@ -47,5 +47,25 @@ public class UserEntity {
 
     public Date getLastUpdate() {
         return lastUpdate;
+    }
+
+    public void setId(ObjectId id) {
+        this.id = id;
+    }
+
+    public void setEmail(String email) {
+        this.email = email;
+    }
+
+    public void setFirstName(String firstName) {
+        this.firstName = firstName;
+    }
+
+    public void setLastName(String lastName) {
+        this.lastName = lastName;
+    }
+
+    public void setLastUpdate(Date lastUpdate) {
+        this.lastUpdate = lastUpdate;
     }
 }

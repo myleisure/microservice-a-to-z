@@ -37,6 +37,12 @@ public class UserEntityBuilder {
     }
 
     public UserEntity createUserEntity() {
-        return new UserEntity(id, email, firstName, lastName, lastUpdate);
+        final var user = new UserEntity();
+        user.setId(id);
+        user.setEmail(email);
+        user.setFirstName(firstName);
+        user.setLastName(lastName);
+        user.setLastUpdate(lastUpdate);
+        return user;
     }
 }

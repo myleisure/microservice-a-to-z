@@ -7,6 +7,8 @@ import com.andry.infra.application.entity.UserEntity;
 import com.andry.infra.application.entity.UserEntityBuilder;
 import com.andry.infra.application.repository.UserRepository;
 import org.bson.types.ObjectId;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 import javax.enterprise.context.ApplicationScoped;
 import java.util.List;
@@ -18,6 +20,7 @@ import java.util.stream.Collectors;
 public class UserInfraAdapter implements UserRepositoryPort {
 
     private final UserRepository userRepository;
+    private Logger log = LoggerFactory.getLogger(this.getClass());
 
     public UserInfraAdapter(UserRepository userRepository) {
         this.userRepository = userRepository;
@@ -25,7 +28,9 @@ public class UserInfraAdapter implements UserRepositoryPort {
 
     @Override
     public List<User> findAll() {
-        return this.userRepository.findAll().stream()
+        final List<UserEntity> list = this.userRepository.findAll().list();
+        log.info("Putain {}",list);
+        return list.stream()
                 .map(userMapper())
                 .collect(Collectors.toList());
     }
