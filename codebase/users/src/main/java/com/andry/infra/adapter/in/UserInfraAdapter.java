@@ -37,8 +37,9 @@ public class UserInfraAdapter implements UserRepositoryPort {
 
     @Override
     public Optional<User> findById(String id) {
-        return this.userRepository.find("id", new ObjectId(id)).firstResultOptional()
+        return this.userRepository.findByIdOptional(new ObjectId(id))
                 .map(userMapper());
+
     }
 
     @Override

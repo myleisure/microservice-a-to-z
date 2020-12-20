@@ -15,9 +15,6 @@ public class UserEntity {
     private String lastName;
     private Date lastUpdate;
 
-    public UserEntity() {
-    }
-
     @Override
     public String toString() {
         return new StringJoiner(", ", UserEntity.class.getSimpleName() + "[", "]")
