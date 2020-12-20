@@ -20,7 +20,6 @@ import java.util.stream.Collectors;
 public class UserInfraAdapter implements UserRepositoryPort {
 
     private final UserRepository userRepository;
-    private Logger log = LoggerFactory.getLogger(this.getClass());
 
     public UserInfraAdapter(UserRepository userRepository) {
         this.userRepository = userRepository;
@@ -29,7 +28,6 @@ public class UserInfraAdapter implements UserRepositoryPort {
     @Override
     public List<User> findAll() {
         final List<UserEntity> list = this.userRepository.findAll().list();
-        log.info("Putain {}",list);
         return list.stream()
                 .map(userMapper())
                 .collect(Collectors.toList());
