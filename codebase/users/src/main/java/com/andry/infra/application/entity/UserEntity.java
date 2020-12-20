@@ -1,9 +1,11 @@
 package com.andry.infra.application.entity;
 
+import io.quarkus.mongodb.panache.MongoEntity;
 import org.bson.types.ObjectId;
 
 import java.util.Date;
 
+@MongoEntity(collection = "user")
 public class UserEntity {
 
     private ObjectId id;
