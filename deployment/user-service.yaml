@@ -1,0 +1,12 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: user
+spec:
+  type: LoadBalancer
+  ports:
+    - name: user
+      port: 8080
+      targetPort: 8080
+  selector:
+    app: user    
