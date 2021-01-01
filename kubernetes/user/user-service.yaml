@@ -3,7 +3,7 @@ kind: Service
 metadata:
   name: user
 spec:
-  type: LoadBalancer
+  type: ClusterIP
   ports:
     - name: user
       port: 8080
